@@ -1,2 +1,1 @@
-Credits to https://github.com/byquangthanh/valentine.github.io/tree/main
-This is a fork
+This is a fork of https://github.com/byquangthanh/valentine.github.io/tree/main
