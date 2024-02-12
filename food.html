@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Selection</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'Courier';
+            background-color:#FFF5E4;
+            color: #FF9494;
+        }
+        #foodquestion {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+        .food-item {
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+			color: #FF9494;
+        }
+        .food-item img {
+            width: 220px; 
+            height: auto;
+			padding: 10px;
+        }
+        .food-item label {
+            display: block;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            font-family: 'courier';
+            margin-bottom: 20px;
+            background-color:#FFE3E1;
+            color: #e67373;
+            border-radius: 12px;
+            border: 2px solid #FFE3E1;
+        }
+    </style>
+</head>
+<body>
+    <div id="foodquestion"><b><u>What food would you like to eat?</u></b></div>
+    
+    <div class="food-selection">
+        <div class="food-item">
+            <img src="food/bao.jpg" alt="bao">
+            <label><input type="checkbox" name="food" value="bao"> Bao</label>
+        </div>
+        <div class="food-item">
+            <img src="food/bossman.jpg" alt="bossman">
+            <label><input type="checkbox" name="food" value="bossman"> Chicken shop</label>
+        </div>
+        <div class="food-item">
+            <img src="food/Burger&lobster.jpg" alt="burger&lobster">
+            <label><input type="checkbox" name="food" value="burgerandlobster"> Burger and Lobster</label>
+        </div>
+        <div class="food-item">
+            <img src="food/pasta.jpeg" alt="pasta">
+            <label><input type="checkbox" name="food" value="pasta"> Pasta</label>
+        </div>
+        <div class="food-item">
+            <img src="food/pizza.jpeg" alt="pizza">
+            <label><input type="checkbox" name="food" value="pizza"> Pizza</label>
+        </div>
+        <div class="food-item">
+            <img src="food/Chinesefood.jpg" alt="chinesefood">
+            <label><input type="checkbox" name="food" value="chinesefood"> Chinese food</label>
+        </div>
+        <div class="food-item">
+            <img src="food/steak.jpeg" alt="steak">
+            <label><input type="checkbox" name="food" value="steak"> Steak</label>
+        </div>
+        <div class="food-item">
+            <img src="food/Sushi~JapaneseFood.jpg" alt="sushi">
+            <label><input type="checkbox" name="food" value="sushi"> Sushi</label>
+        </div>
+        <div class="food-item">
+            <img src="food/nandos.jpg" alt="nandos">
+            <label><input type="checkbox" name="food" value="nandos"> Nandos</label>
+        </div>
+        <div class="food-item">
+            <img src="food/ramen.jpg" alt="ramen">
+            <label><input type="checkbox" name="ramen" value="ramem"> Ramen</label>
+        </div>
+        <div class="food-item">
+            <img src="food/Pho~Vietnamese Food.jpg" alt="pho">
+            <label><input type="checkbox" name="food" value="pho"> Vietnamese Food</label>
+        </div>
+        <div class="food-item">
+            <img src="food/Koreanfood.jpg" alt="koreanfood">
+            <label><input type="checkbox" name="food" value="koreanfood"> Korean Food</label>
+        </div>
+        <div class="food-item">
+            <img src="food/stayin.jpg" alt="stayin">
+            <label><input type="checkbox" name="food" value="stayin"> Order Food & Chill</label>
+        </div>
+    </div>
+    <button class ="button"onclick="location.href='dessert.html'">Continue</button>
+    
+</body>
+</html>
