@@ -12,8 +12,8 @@
             background-color: #FFF5E4;
             color: #FF9494;
         }
-        h1 {
-            font-size: 2rem;
+        #dancing {
+            font-size: 3rem;
             margin-bottom: 20px;
         }
         .responsive {
@@ -21,90 +21,22 @@
             height: auto;
             display: block;
             margin: 0 auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        #lovers {
-            margin-top: 50px;
-            position: relative;
-            width: 300px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lover {
-            width: 120px;
-            height: 120px;
-            background-color: #FFC0CB;
-            border-radius: 50%;
-            position: absolute;
-        }
-
-        .lover.left {
-            left: 20%;
-        }
-
-        .lover.right {
-            right: 20%;
-        }
-
-        .string {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 4px;
-            height: 200px;
-            background-color: #FF0000;
-        }
-
-        .heart {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-        }
-
-        .heart::before,
-        .heart::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 50px;
-            height: 80px;
-            background-color: #FF0000;
-            border-radius: 50px 50px 0 0;
-        }
-
-        .heart::before {
-            left: 50px;
-            transform: rotate(-45deg);
-            transform-origin: 0 100%;
-        }
-
-        .heart::after {
-            left: 0;
-            transform: rotate(45deg);
-            transform-origin: 100% 100%;
         }
     </style>
+    <!-- Link the shootingstar.css file -->
+    <link rel="stylesheet" href="shootingstar.css">
 </head>
 <body>
-    <h1>Thank you for being my girlfriend</h1>
+    <div id="dancing"><b>Thank you for being my girlfriend</b></div>
+    <br>
     <img src="gojo.gif" alt="Happy Gojo" class="responsive">
-    <audio controls autoplay>
+    <br>
+    <!-- Shooting Star Animation -->
+    <div class="shooting-star"></div>
+    <!-- Audio -->
+    <audio controls autoplay loop>
         <source src="아이유 (IU) 'Love wins all'.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <div id="lovers">
-        <div class="lover left"></div>
-        <div class="lover right"></div>
-        <div class="string"></div>
-        <div class="heart"></div>
-    </div>
 </body>
 </html>

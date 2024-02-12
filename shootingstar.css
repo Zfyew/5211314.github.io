@@ -1,0 +1,83 @@
+body {
+    background-color: #000;
+    overflow: hidden;
+}
+
+.shooting-star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 2px;
+    background-color: #FFF;
+    border-radius: 50%;
+    animation: shootingStar 5s ease-out infinite;
+    z-index: 2;
+}
+
+.shooting-star::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: shootingStarBefore 5s ease-out infinite;
+    z-index: 1;
+}
+
+.shooting-star::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: shootingStarAfter 5s ease-out infinite;
+    z-index: 1;
+}
+
+@keyframes shootingStar {
+    0% {
+        transform: translate(-200%, -200%) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(200%, 200%) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes shootingStarBefore {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes shootingStarAfter {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
