@@ -3,47 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sad boy</title>
-	<style>
-		body {
+    <title>Sad Boy</title>
+    <style>
+        body {
             text-align: center;
             margin-top: 30px;
-            font-family: 'Courier';
-            background-color:#FFF5E4;
+            font-family: 'Courier', monospace;
+            background-color: #FFF5E4;
             color: #FF9494;
         }
-		#sad {
-			font-size: 50px;
-			margin-bottom: 20px;
-		}
-		.rizz {
-			margin-bottom: 10 px;
-		}
-		.button {
+        #sad {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        #sadcat {
+            margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+        .button {
             padding: 10px 20px;
-            font-size: 18px;
+            font-size: 1.2rem;
             cursor: pointer;
             margin: 10px;
-            font-family: 'courier';
             margin-bottom: 20px;
-            background-color:#FFE3E1;
+            background-color: #FFE3E1;
             color: #e67373;
             border-radius: 12px;
             border: 2px solid #FFE3E1;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
-	</style>
+        .button:hover {
+            background-color: #e67373;
+            color: #FFE3E1;
+            border-color: #e67373;
+        }
+    </style>
 </head>
 <body>
-	<div id="sad"><b>(◞‸ ◟ ；)</b></div>
+    <div id="sad"><b>(◞‸ ◟ ；)</b></div>
 
-	<img id = "sadcat" src = 'sad-cat.gif' alt = "sadcat" class="responsive">
-	<br>
+    <img id="sadcat" src="sad-cat.gif" alt="Sad Cat" class="responsive">
+    <br>
     <audio controls autoplay>
-		<source src="minari.mp3" type="audio/mpeg">
-		Your browser does not support the audio element.
-	</audio>
+        <source src="minari.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <br>
     <br>
-	<button class="button" onclick="location.href='index.html'"> Wait! I change my mind! </button>
+    <button class="button" onclick="location.href='index.html'">Wait! I Change My Mind!</button>
 </body>
 </html>

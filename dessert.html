@@ -1,72 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dessert</title>
-	<style>
-		body {
-			text-align: center;
-			margin-top: 30px;
-			font-family: courier;
-			background-color: #FFF5E4;
-			color: #FF9494;
-		}
-		#dessertquestion {
-			font-size: 100px;
-			margin-bottom: 30px;
-			font-weight: bold;
-		}
-		.dessert-item {
-			display: inline-table;
-			margin: 10px;
-			vertical-align: top;
-			color: #FF9494;
-		}
-		.dessert-item img {
-            width: 220px; 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessert</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'Courier', monospace;
+            background-color: #FFF5E4;
+            color: #FF9494;
+        }
+        #dessertquestion {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .dessert-item {
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+            color: #FF9494;
+        }
+        .dessert-item img {
+            width: 220px;
             height: auto;
-			padding: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-		.dessert-item label {
+        .dessert-item label {
             display: block;
+            margin-top: 10px;
         }
-		.button {
+        .button {
             padding: 10px 20px;
-            font-size: 18px;
+            font-size: 1rem;
             cursor: pointer;
             margin: 10px;
-            font-family: 'courier';
             margin-bottom: 20px;
-            background-color:#FFE3E1;
+            background-color: #FFE3E1;
             color: #e67373;
             border-radius: 12px;
             border: 2px solid #FFE3E1;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
-	</style>
+        .button:hover {
+            background-color: #e67373;
+            color: #FFE3E1;
+            border-color: #e67373;
+        }
+    </style>
 </head>
 <body>
-	<div id = "dessertquestion"> What desert you feeling?</div>
-	
-	<div class = "dessert-selection">
-		<div class = "dessert-item">
-			<img src = "food/boba.jpg" alt ="boba">
-			<label><input type="checkbox" name="dessert" value="boba"> Boba </label>
-		</div>	
-		<div class = "dessert-item">
-			<img src = "food/churros.jpg" alt ="churro">
-			<label><input type="checkbox" name="dessert" value="churro"> Churro </label>
-		</div>	
-		<div class = "dessert-item">
-			<img src = "food/gelato.jpg" alt ="Gelato">
-			<label><input type="checkbox" name="dessert" value="Gelato"> Gelato </label>
-		</div>	
-		<div class = "dessert-item">
-			<img src = "food/mochi.jpeg" alt ="mochi">
-			<label><input type="checkbox" name="dessert" value="mochi"> Mochi</label>
-		</div>	
-	</div>
-	<button class = "button" onclick="location.href='activities.html'">Continue</button>
-
+    <div id="dessertquestion">What dessert are you feeling?</div>
+    
+    <div class="dessert-selection">
+        <div class="dessert-item">
+            <img src="food/boba.jpg" alt="Boba">
+            <label><input type="checkbox" name="dessert" value="boba">Boba</label>
+        </div>  
+        <div class="dessert-item">
+            <img src="food/churros.jpg" alt="Churro">
+            <label><input type="checkbox" name="dessert" value="churro">Churro</label>
+        </div>  
+        <div class="dessert-item">
+            <img src="food/gelato.jpg" alt="Gelato">
+            <label><input type="checkbox" name="dessert" value="gelato">Gelato</label>
+        </div>  
+        <div class="dessert-item">
+            <img src="food/mochi.jpeg" alt="Mochi">
+            <label><input type="checkbox" name="dessert" value="mochi">Mochi</label>
+        </div>  
+    </div>
+    <button class="button" onclick="location.href='activities.html'">Continue</button>
 </body>
 </html>

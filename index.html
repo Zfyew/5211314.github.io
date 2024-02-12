@@ -8,34 +8,44 @@
         body {
             text-align: center;
             margin-top: 30px;
-            font-family: 'Courier';
-			background-color:#FFF5E4;
+            font-family: 'Courier', monospace;
+            background-color: #FFF5E4;
             color: #FF9494;
         }
         #valentineQuestion {
-            font-size: 100px;
+            font-size: 3rem;
             margin-bottom: 10px;
         }
         .answerButton {
             padding: 10px 20px;
-            font-size: 18px;
+            font-size: 1.2rem;
             cursor: pointer;
             margin: 10px;
-            font-family: 'courier';
             margin-bottom: 20px;
-            background-color:#FFE3E1;
+            background-color: #FFE3E1;
             color: #e67373;
             border-radius: 12px;
             border: 2px solid #FFE3E1;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+        .answerButton:hover {
+            background-color: #e67373;
+            color: #FFE3E1;
+            border-color: #e67373;
+        }
+        .responsive {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
+    <div id="valentineQuestion"><b>Will you be my Valentine?</b></div>
     <button class="answerButton" onclick="location.href='thankyou.html'">Yes</button>
     <button class="answerButton" onclick="location.href='sad.html'">No</button>
     <br>
-    <img src ='cat.gif' alt = 'cat asking question' class="responsive">
-
+    <img src="cat.gif" alt="Catplease" class="responsive">
 </body>
 </html>

@@ -1,86 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<style>
-		body {
-			text-align: center;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
             margin-top: 30px;
-            font-family: 'Courier';
-            background-color:#FFF5E4;
+            font-family: 'Courier', monospace;
+            background-color: #FFF5E4;
             color: #FF9494;
-		}
-		#activityquestion {
-			font-size: 50px;
+        }
+        #activityquestion {
+            font-size: 2rem;
             margin-bottom: 30px;
-		}
-		.activity-item {
+        }
+        .activity-item {
             display: inline-block;
             margin: 10px;
             vertical-align: top;
-			color: #FF9494;
+            color: #FF9494;
         }
         .activity-item img {
-            width: 220px; 
+            width: 220px;
             height: auto;
-			padding: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .activity-item label {
             display: block;
+            margin-top: 10px;
         }
-		.button {
+        .button {
             padding: 10px 20px;
-            font-size: 18px;
+            font-size: 1rem;
             cursor: pointer;
             margin: 10px;
-            font-family: 'courier';
             margin-bottom: 20px;
-            background-color:#FFE3E1;
+            background-color: #FFE3E1;
             color: #e67373;
             border-radius: 12px;
             border: 2px solid #FFE3E1;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
-	</style>
+        .button:hover {
+            background-color: #e67373;
+            color: #FFE3E1;
+            border-color: #e67373;
+        }
+    </style>
 </head>
 <body>
-	<div id="activityquestion"><b>What are we doing after?</b>
-	</div>
-	<div class = "activities-selection">
-		<div class="activity-item">
-			<img src="activities/Aquarium.jpg" alt ="Aquarium">
-			<label><input type="checkbox" name="activities" value ="Aquarium">Aquarium</label>
-		</div>
-		<div class="activity-item">
-			<img src="activities/Cinema.jpg" alt ="Cinema">
-			<label><input type="checkbox" name="activities" value ="Cinema">Cinema</label>
-		</div>
-		<div class="activity-item">
-			<img src="activities/Exhibition.jpg" alt ="Exhibition">
-			<label><input type="checkbox" name="activities" value ="Exhibition">Exhibition</label>
-		</div>
-		<div class="activity-item">
-			<img src="activities/IndoorswithHaru.JPG" alt ="IndoorswithHaru">
-			<label><input type="checkbox" name="activities" value ="IndoorswithHaru">Indoors with Haru</label>
-		</div>
-		<div class="activity-item">
-			<img src="activities/Netflix.jpg" alt ="Netflix">
-			<label><input type="checkbox" name="activities" value ="Netflix">Netflix and Chill</label>
-		</div>
-		<div class="activity-item">
-			<img src="activities/Park.jpg" alt ="Park">
-			<label><input type="checkbox" name="activities" value ="Park">Park</label>
-		</div>
-		<div class="activity-item">
-			<img src="activities/ZombieVR.jpg" alt ="ZombieVR.jpeg">
-			<label><input type="checkbox" name="activities" value ="ZombieVR">ZombieVR</label>
-		</div>
-		<div class="activity-item">
-			<img src="activities/Zoo.jpg" alt ="Zoo">
-			<label><input type="checkbox" name="activities" value ="Zoo">Zoo</label>
-		</div>
-	</div>
-	<button class = "button" onclick="location.href='dancing.html'">Confirm</button>
-</body>
-</html>
+    <div id="activityquestion"><b>What are we doing after?</b></div>
+    <div class="activities-selection">
+        <div class="activity-item">
+            <img src="activities/Aquarium.jpg" alt="Aquarium">
+            <label><input type="checkbox" name="activities" value="Aquarium"> Aquarium</label>
+        </div>
+        <div class="activity-item">
+            <img src="activities/Cinema.jpg" alt="Cinema">
+            <label><input type="checkbox" name="activities" value="Cinema"> Cinema</label>
+        </div>
+        <div class="activity-item">
+            <img src="activities/Exhibition.jpg" alt="Exhibition">
+            <label><input type="checkbox" name="activities" value="Exhibition"> Exhibition</label>
+        </div>
+        <div class="activity-item">
+            <img src="activities/IndoorswithHaru.JPG" alt="Indoors with Haru">
+            <label><input type="checkbox" name="activities" value="IndoorswithHaru"> Indoors with Haru</label>
+        </div>
+        <div class="activity-item">
+            <img src="activities/Netflix.jpg" alt="Netflix and Chill">
+            <label><input type="checkbox" name="activities" value="Netflix"> Netflix and Chill
