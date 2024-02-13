@@ -11,6 +11,9 @@
             font-family: 'Comic Sans MS', cursive, sans-serif; /* Change font to Comic Sans MS */
             background-color: #FCE5E5; /* Soft pink background color */
             color: #e67373; /* Adjust text color */
+            background-image: url('string.jpg'); /* Set sakura.gif as background image */
+            background-size: cover; /* Cover the entire background */
+            background-attachment: fixed; /* Fixed background position */
         }
         #valentineQuestion {
             font-size: 3rem;
@@ -39,13 +42,46 @@
             display: block;
             margin: 0 auto;
         }
+        .large {
+            font-size: 2rem; /* Initial font size */
+            transform: scale(1.2); /* Initial button size */
+        }
     </style>
 </head>
 <body>
     <div id="valentineQuestion"><b>Will you be my Valentine?</b></div>
-    <button class="answerButton" onclick="location.href='thankyou.html'">Yes</button>
-    <button class="answerButton" onclick="location.href='sad.html'">No</button>
     <br>
-    <img src="cat.gif" alt="Catplease" class="responsive">
+    <br>
+    <button class="answerButton" onclick="location.href='thankyou.html'">Yes</button>
+    <button id="noButton" class="answerButton" onclick="handleNoButtonClick()">No</button>
+    <br>
+    <br>
+    <br>
+    <img id="catImage" src="cat.gif" alt="Catplease" class="responsive">
+
+    <script>
+        let noButtonClickCount = 0;
+
+        function handleNoButtonClick() {
+            const yesButton = document.querySelector('.answerButton');
+            const noButton = document.getElementById('noButton');
+            const catImage = document.getElementById('catImage');
+            
+            if (noButtonClickCount < 3) {
+                yesButton.style.fontSize = `${2 + noButtonClickCount * 2}rem`; // Increase font size
+                yesButton.style.transform = `scale(${1.2 + noButtonClickCount * 0.2})`; // Increase button size
+            }
+
+            noButton.style.marginLeft = `${noButtonClickCount * 25}px`; // Increase margin left for the No button
+            
+            noButtonClickCount++;
+            
+            if (noButtonClickCount === 4) {
+                window.location.href = 'sad.html';
+            } else if (noButtonClickCount === 1) {
+                catImage.src = 'anya.gif'; // Change the image source to anya.gif
+            }
+        }
+    </script>
 </body>
 </html>
