@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Date</title>
     <style>
+        /* Global styles */
         body {
             text-align: center;
             margin-top: 30px;
-            font-family: 'Courier', monospace;
-            background-color: #FFF5E4;
-            color: #FF9494;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Change font to Comic Sans MS */
+            background-color: #FCE5E5; /* Soft pink background color */
+            color: #e67373; /* Adjust text color */
         }
         h1 {
-            font-size: 3rem;
+            font-size: 2rem; /* Adjust heading font size */
         }
         .responsive {
             max-width: 100%;
@@ -28,20 +29,20 @@
         }
         .button {
             padding: 10px 20px;
-            font-size: 1rem;
+            font-size: 1.2rem;
             cursor: pointer;
             margin: 10px;
-            margin-bottom: 10px;
-            background-color: #FFE3E1;
-            color: #e67373;
+            margin-bottom: 20px;
+            background-color: #e45b5b; /* Adjusted button background color */
+            color: #FFF; /* Adjusted text color */
             border-radius: 12px;
-            border: 2px solid #FFE3E1;
+            border: 2px solid #e45b5b; /* Adjusted border color */
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         .button:hover {
-            background-color: #e67373;
-            color: #FFE3E1;
-            border-color: #e67373;
+            background-color: #FF9494; /* Adjusted hover background color */
+            color: #FFF; /* Adjusted hover text color */
+            border-color: #FF9494; /* Adjusted hover border color */
         }
     </style>
 </head>
@@ -50,10 +51,21 @@
     <img src="kirby.gif" alt="Kirby" class="responsive">
     <br>
     <p>(Select date)</p>
-    <form action="food.html" class="form-group">
+    <form action="food.html" class="form-group" onsubmit="return validateForm()">
         <label for="date">Which day:</label>
-        <input type="date" id="date" name="date">
+        <input type="date" id="date" name="date" required>
         <button class="button" type="submit">Submit</button>
     </form>
+
+    <script>
+        function validateForm() {
+            var selectedDate = document.getElementById("date").value;
+            if (selectedDate === "") {
+                alert("You have to pick a date");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
 </body>
 </html>

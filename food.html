@@ -8,9 +8,9 @@
         body {
             text-align: center;
             margin-top: 30px;
-            font-family: 'Courier', monospace;
-            background-color: #FFF5E4;
-            color: #FF9494;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Change font to Comic Sans MS */
+            background-color: #FCE5E5; /* Soft pink background color */
+            color: #e67373; /* Adjust text color */
         }
         #foodquestion {
             font-size: 3rem;
@@ -22,7 +22,8 @@
             display: inline-block;
             margin: 10px;
             vertical-align: top;
-            color: #FF9494;
+            color: #e67373; /* Adjust text color */
+            cursor: pointer; /* Add cursor pointer to indicate it's clickable */
         }
         .food-item img {
             width: 220px;
@@ -34,23 +35,24 @@
         .food-item label {
             display: block;
             margin-top: 10px;
+            font-size: 1.2rem; /* Increase label font size */
         }
         .button {
             padding: 10px 20px;
-            font-size: 1rem;
+            font-size: 1.2rem;
             cursor: pointer;
             margin: 10px;
             margin-bottom: 20px;
-            background-color: #FFE3E1;
-            color: #e67373;
+            background-color: #e45b5b; /* Adjusted button background color */
+            color: #FFF; /* Adjusted text color */
             border-radius: 12px;
-            border: 2px solid #FFE3E1;
+            border: 2px solid #e45b5b; /* Adjusted border color */
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         .button:hover {
-            background-color: #e67373;
-            color: #FFE3E1;
-            border-color: #e67373;
+            background-color: #FF9494; /* Adjusted hover background color */
+            color: #FFF; /* Adjusted hover text color */
+            border-color: #FF9494; /* Adjusted hover border color */
         }
     </style>
 </head>
@@ -60,49 +62,69 @@
     <div class="food-selection">
         <div class="food-item">
             <img src="food/bao.jpg" alt="Bao">
-            <label><input type="checkbox" name="food" value="bao"> Bao</label>
+            <label><input type="radio" name="food" value="bao"> Bao</label>
         </div>
         <div class="food-item">
             <img src="food/hamburger-frieren.gif" alt="Burger">
-            <label><input type="checkbox" name="food" value="burger"> Burger</label>
+            <label><input type="radio" name="food" value="burger"> Burger</label>
         </div>
         <div class="food-item">
             <img src="food/pasta.jpg" alt="Pasta">
-            <label><input type="checkbox" name="food" value="pasta"> Pasta</label>
+            <label><input type="radio" name="food" value="pasta"> Pasta</label>
         </div>
         <div class="food-item">
             <img src="food/pizza.jpg" alt="Pizza">
-            <label><input type="checkbox" name="food" value="pizza"> Pizza</label>
+            <label><input type="radio" name="food" value="pizza"> Pizza</label>
         </div>
         <div class="food-item">
             <img src="food/Chinesefood.jpg" alt="Chinese Food">
-            <label><input type="checkbox" name="food" value="chinesefood"> Chinese Food</label>
+            <label><input type="radio" name="food" value="chinesefood"> Chinese Food</label>
         </div>
         <div class="food-item">
             <img src="food/steak.jpg" alt="Steak">
-            <label><input type="checkbox" name="food" value="steak"> Steak</label>
+            <label><input type="radio" name="food" value="steak"> Steak</label>
         </div>
         <div class="food-item">
             <img src="food/Sushi~JapaneseFood.jpg" alt="Sushi">
-            <label><input type="checkbox" name="food" value="sushi"> Sushi/Japanese Food</label>
+            <label><input type="radio" name="food" value="sushi"> Sushi/Japanese Food</label>
         </div>
         <div class="food-item">
             <img src="food/naruto.gif" alt="Ramen">
-            <label><input type="checkbox" name="food" value="ramen"> Ramen</label>
+            <label><input type="radio" name="food" value="ramen"> Ramen</label>
         </div>
         <div class="food-item">
             <img src="food/Pho.jpg" alt="Pho">
-            <label><input type="checkbox" name="food" value="pho"> Vietnamese Food</label>
+            <label><input type="radio" name="food" value="pho"> Vietnamese Food</label>
         </div>
         <div class="food-item">
             <img src="food/Koreanfood.jpg" alt="Korean Food">
-            <label><input type="checkbox" name="food" value="koreanfood"> Korean Food</label>
+            <label><input type="radio" name="food" value="koreanfood"> Korean Food</label>
         </div>
         <div class="food-item">
             <img src="food/stayin.jpg" alt="Order Food & Chill">
-            <label><input type="checkbox" name="food" value="stayin"> Order Food & Chill</label>
+            <label><input type="radio" name="food" value="stayin"> Order Food & Chill</label>
         </div>
     </div>
-    <button class="button" onclick="location.href='dessert.html'">Continue</button>
+    <button class="button" onclick="validateSelection()">Continue</button>
+
+    <script>
+        function validateSelection() {
+            var selectedFood = document.querySelector('input[name="food"]:checked');
+            if (!selectedFood) {
+                alert("You must pick something to eat");
+            } else {
+                location.href = 'dessert.html';
+            }
+        }
+
+        // Function to handle clicking on food images to select the corresponding radio input
+        var foodItems = document.querySelectorAll('.food-item');
+        foodItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var radio = item.querySelector('input[type="radio"]');
+                radio.checked = true;
+            });
+        });
+    </script>
 </body>
 </html>

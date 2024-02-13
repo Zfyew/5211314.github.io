@@ -8,9 +8,9 @@
         body {
             text-align: center;
             margin-top: 30px;
-            font-family: 'Courier', monospace;
-            background-color: #FFF5E4;
-            color: #FF9494;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Change font to Comic Sans MS */
+            background-color: #FCE5E5; /* Soft pink background color */
+            color: #e67373; /* Adjust text color */
         }
         #activityquestion {
             font-size: 2rem;
@@ -20,7 +20,8 @@
             display: inline-block;
             margin: 10px;
             vertical-align: top;
-            color: #FF9494;
+            color: #e67373; /* Adjust text color */
+            cursor: pointer; /* Add cursor pointer to indicate it's clickable */
         }
         .activity-item img {
             width: 220px;
@@ -32,23 +33,24 @@
         .activity-item label {
             display: block;
             margin-top: 10px;
+            font-size: 1.2rem; /* Increase label font size */
         }
         .button {
             padding: 10px 20px;
-            font-size: 1rem;
+            font-size: 1.2rem;
             cursor: pointer;
             margin: 10px;
             margin-bottom: 20px;
-            background-color: #FFE3E1;
-            color: #e67373;
+            background-color: #e45b5b; /* Adjusted button background color */
+            color: #FFF; /* Adjusted text color */
             border-radius: 12px;
-            border: 2px solid #FFE3E1;
+            border: 2px solid #e45b5b; /* Adjusted border color */
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         .button:hover {
-            background-color: #e67373;
-            color: #FFE3E1;
-            border-color: #e67373;
+            background-color: #FF9494; /* Adjusted hover background color */
+            color: #FFF; /* Adjusted hover text color */
+            border-color: #FF9494; /* Adjusted hover border color */
         }
     </style>
 </head>
@@ -57,37 +59,57 @@
     <div class="activities-selection">
         <div class="activity-item">
             <img src="activities/Aquarium.jpg" alt="Aquarium">
-            <label><input type="checkbox" name="activities" value="Aquarium"> Aquarium</label>
+            <label><input type="radio" name="activities" value="Aquarium"> Visit the Aquarium</label>
         </div>
         <div class="activity-item">
             <img src="activities/Cinema.jpg" alt="Cinema">
-            <label><input type="checkbox" name="activities" value="Cinema"> Cinema</label>
+            <label><input type="radio" name="activities" value="Cinema"> Movie Night at the Cinema</label>
         </div>
         <div class="activity-item">
             <img src="activities/Exhibition.jpg" alt="Exhibition">
-            <label><input type="checkbox" name="activities" value="Exhibition"> Exhibition</label>
+            <label><input type="radio" name="activities" value="Exhibition"> Explore an Art Exhibition</label>
         </div>
         <div class="activity-item">
             <img src="activities/IndoorswithHaru.JPG" alt="Indoors with Haru">
-            <label><input type="checkbox" name="activities" value="IndoorswithHaru"> Indoors with Haru</label>
+            <label><input type="radio" name="activities" value="IndoorswithHaru"> Cozy Indoors with Haru</label>
         </div>
         <div class="activity-item">
             <img src="activities/Netflix.jpg" alt="Netflix and Chill">
-            <label><input type="checkbox" name="activities" value="Netflix"> Netflix and Chill</label>
+            <label><input type="radio" name="activities" value="Netflix"> Netflix and Chill</label>
         </div>
         <div class="activity-item">
             <img src="activities/Park.jpg" alt="Park">
-            <label><input type="checkbox" name="activities" value="Park"> Park</label>
+            <label><input type="radio" name="activities" value="Park"> Picnic in the Park</label>
         </div>
         <div class="activity-item">
             <img src="activities/ZombieVR.jpg" alt="ZombieVR">
-            <label><input type="checkbox" name="activities" value="ZombieVR"> ZombieVR</label>
+            <label><input type="radio" name="activities" value="ZombieVR"> ZombieVR Adventure</label>
         </div>
         <div class="activity-item">
             <img src="activities/Zoo.jpg" alt="Zoo">
-            <label><input type="checkbox" name="activities" value="Zoo"> Zoo</label>
+            <label><input type="radio" name="activities" value="Zoo"> Visit the Zoo</label>
         </div>
     </div>
-    <button class="button" onclick="location.href='dancing.html'">Confirm</button>
+    <button class="button" onclick="validateSelection()">Confirm</button>
+
+    <script>
+        function validateSelection() {
+            var selectedActivity = document.querySelector('input[name="activities"]:checked');
+            if (!selectedActivity) {
+                alert("You must pick an activity");
+            } else {
+                location.href = 'dancing.html';
+            }
+        }
+
+        // Function to handle clicking on activity images to select the corresponding radio input
+        var activityItems = document.querySelectorAll('.activity-item');
+        activityItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var radio = item.querySelector('input[type="radio"]');
+                radio.checked = true;
+            });
+        });
+    </script>
 </body>
 </html>

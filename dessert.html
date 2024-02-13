@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dessert</title>
     <style>
+        /* Global styles */
         body {
             text-align: center;
             margin-top: 30px;
-            font-family: 'Courier', monospace;
-            background-color: #FFF5E4;
-            color: #FF9494;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Change font to Comic Sans MS */
+            background-color: #FCE5E5; /* Soft pink background color */
+            color: #e67373; /* Adjust text color */
         }
         #dessertquestion {
-            font-size: 3rem;
+            font-size: 2rem; /* Adjust heading font size */
             margin-bottom: 30px;
             font-weight: bold;
         }
@@ -21,7 +22,8 @@
             display: inline-block;
             margin: 10px;
             vertical-align: top;
-            color: #FF9494;
+            color: #e67373; /* Adjust text color */
+            cursor: pointer; /* Add cursor pointer to indicate it's clickable */
         }
         .dessert-item img {
             width: 220px;
@@ -33,23 +35,24 @@
         .dessert-item label {
             display: block;
             margin-top: 10px;
+			font-size: 1.2rem; /* Increase label font size */
         }
         .button {
             padding: 10px 20px;
-            font-size: 1rem;
+            font-size: 1.2rem;
             cursor: pointer;
             margin: 10px;
             margin-bottom: 20px;
-            background-color: #FFE3E1;
-            color: #e67373;
+            background-color: #e45b5b; /* Adjusted button background color */
+            color: #FFF; /* Adjusted text color */
             border-radius: 12px;
-            border: 2px solid #FFE3E1;
+            border: 2px solid #e45b5b; /* Adjusted border color */
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         .button:hover {
-            background-color: #e67373;
-            color: #FFE3E1;
-            border-color: #e67373;
+            background-color: #FF9494; /* Adjusted hover background color */
+            color: #FFF; /* Adjusted hover text color */
+            border-color: #FF9494; /* Adjusted hover border color */
         }
     </style>
 </head>
@@ -59,21 +62,41 @@
     <div class="dessert-selection">
         <div class="dessert-item">
             <img src="food/boba.jpg" alt="Boba">
-            <label><input type="checkbox" name="dessert" value="boba">Boba</label>
+            <label><input type="radio" name="dessert" value="boba">Boba</label>
         </div>  
         <div class="dessert-item">
             <img src="food/churros.jpg" alt="Churro">
-            <label><input type="checkbox" name="dessert" value="churro">Churro</label>
+            <label><input type="radio" name="dessert" value="churro">Churro</label>
         </div>  
         <div class="dessert-item">
             <img src="food/gelato.jpg" alt="Gelato">
-            <label><input type="checkbox" name="dessert" value="gelato">Gelato</label>
+            <label><input type="radio" name="dessert" value="gelato">Gelato</label>
         </div>  
         <div class="dessert-item">
             <img src="food/mochi.jpeg" alt="Mochi">
-            <label><input type="checkbox" name="dessert" value="mochi">Mochi</label>
+            <label><input type="radio" name="dessert" value="mochi">Mochi</label>
         </div>  
     </div>
-    <button class="button" onclick="location.href='activities.html'">Continue</button>
+    <button class="button" onclick="validateSelection()">Continue</button>
+
+    <script>
+        function validateSelection() {
+            var selectedDessert = document.querySelector('input[name="dessert"]:checked');
+            if (!selectedDessert) {
+                alert("You must pick a dessert");
+            } else {
+                location.href = 'activities.html';
+            }
+        }
+
+        // Function to handle clicking on dessert images to select the corresponding radio button
+        var dessertItems = document.querySelectorAll('.dessert-item');
+        dessertItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var radio = item.querySelector('input[type="radio"]');
+                radio.checked = true;
+            });
+        });
+    </script>
 </body>
 </html>

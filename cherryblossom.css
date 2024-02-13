@@ -1,0 +1,22 @@
+/* Cherry Blossom Petals CSS */
+@keyframes blossomFall {
+    0% {
+        transform: translateY(-10vh) translateX(calc(100vw * random())) rotate(0deg);
+        opacity: 0; /* Initial opacity set to 0 */
+    }
+    100% {
+        transform: translateY(calc(110vh - 30px)) translateX(calc(100vw * random())) rotate(360deg); /* Adjust to keep the petal visible after landing */
+        opacity: 1;
+    }
+}
+
+/* Define individual cherry blossom petals */
+.cherry-blossom-petal {
+    position: absolute;
+    width: 60px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    background-color: #FFC0CB; /* Adjust color as needed */
+    border-radius: 50%;
+    transform: rotate(45deg); /* Rotate the petal */
+    animation: blossomFall linear infinite; /* Fall animation */
+}
